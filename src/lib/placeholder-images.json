@@ -1,3 +1,148 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-1",
+      "description": "A vibrant waterpark with slides and happy families.",
+      "imageUrl": "https://images.unsplash.com/photo-1723524993962-0234edebe0cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3YXRlcnBhcmslMjBmdW58ZW58MHx8fHwxNzcwMjg0NzQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "waterpark fun"
+    },
+    {
+      "id": "attraction-1",
+      "description": "A long and winding spiral water slide.",
+      "imageUrl": "https://images.unsplash.com/photo-1472805911884-dc4c5797ee37?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d2F0ZXIlMjBzbGlkZXxlbnwwfHx8fDE3NzAyODQ3NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "water slide"
+    },
+    {
+      "id": "attraction-2",
+      "description": "People relaxing in a wave pool.",
+      "imageUrl": "https://images.unsplash.com/photo-1644128563780-8b53d3450b8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3YXZlJTIwcG9vbHxlbnwwfHx8fDE3NzAyODQ3NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "wave pool"
+    },
+    {
+      "id": "attraction-3",
+      "description": "A giant tipping bucket splashing water on children.",
+      "imageUrl": "https://images.unsplash.com/photo-1760907949955-294e28bf058d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d2F0ZXIlMjBidWNrZXR8ZW58MHx8fHwxNzcwMjg0NzQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "water bucket"
+    },
+    {
+      "id": "attraction-4",
+      "description": "A colorful and safe kids' pool area.",
+      "imageUrl": "https://images.unsplash.com/photo-1557469778-0b3269a1cc7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxraWRzJTIwcG9vbHxlbnwwfHx8fDE3NzAyODQ3NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "kids pool"
+    },
+    {
+      "id": "attraction-5",
+      "description": "People floating on tubes in a lazy river.",
+      "imageUrl": "https://images.unsplash.com/photo-1721676331394-60c05e58662a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsYXp5JTIwcml2ZXJ8ZW58MHx8fHwxNzcwMjg0NzQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lazy river"
+    },
+    {
+      "id": "attraction-6",
+      "description": "Excited people in a wave pool as a large wave approaches.",
+      "imageUrl": "https://images.unsplash.com/photo-1622080234163-edd03e4ea2cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d2F2ZSUyMHBvb2x8ZW58MHx8fHwxNzcwMjg0NzQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "wave pool"
+    },
+    {
+      "id": "news-1",
+      "description": "A family smiling and splashing in the water.",
+      "imageUrl": "https://images.unsplash.com/photo-1706843541054-21217423f177?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmYW1pbHklMjB3YXRlcnBhcmt8ZW58MHx8fHwxNzcwMjg0NzQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "family waterpark"
+    },
+    {
+      "id": "news-2",
+      "description": "A DJ playing music by the pool at a waterpark.",
+      "imageUrl": "https://images.unsplash.com/photo-1562866470-3774249bef10?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb29sJTIwcGFydHl8ZW58MHx8fHwxNzcwMjg0NzQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pool party"
+    },
+    {
+      "id": "news-3",
+      "description": "A mother applying sunscreen to her child's back.",
+      "imageUrl": "https://images.unsplash.com/photo-1759341918577-db94fffb7947?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdW5zY3JlZW4lMjBjaGlsZHxlbnwwfHx8fDE3NzAyODQ3NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sunscreen child"
+    },
+    {
+      "id": "news-4",
+      "description": "A boat ride attraction inside a theme park.",
+      "imageUrl": "https://images.unsplash.com/photo-1499934604949-1a1cc7bfebf7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxyaXZlciUyMGNydWlzZXxlbnwwfHx8fDE3NzAyODQ3NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "river cruise"
+    },
+    {
+      "id": "gallery-1",
+      "description": "An aerial view of the entire waterpark.",
+      "imageUrl": "https://images.unsplash.com/photo-1761124469507-424d33a0b4f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3YXRlcnBhcmslMjBhZXJpYWx8ZW58MHx8fHwxNzcwMjg0NzQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "waterpark aerial"
+    },
+    {
+      "id": "gallery-2",
+      "description": "A group of friends going down a multi-lane slide.",
+      "imageUrl": "https://images.unsplash.com/photo-1707575561373-d868bc04d593?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmcmllbmRzJTIwd2F0ZXJwYXJrfGVufDB8fHx8MTc3MDI4NDc0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "friends waterpark"
+    },
+    {
+      "id": "gallery-3",
+      "description": "A child laughing under a water fountain.",
+      "imageUrl": "https://images.unsplash.com/photo-1655834402262-951c4a0ef52a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaGlsZCUyMHdhdGVyfGVufDB8fHx8MTc3MDI4NDc0NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "child water"
+    },
+    {
+      "id": "gallery-4",
+      "description": "The serene lazy river winding through lush greenery.",
+      "imageUrl": "https://images.unsplash.com/photo-1712687280515-f2370afc8f9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxsYXp5JTIwcml2ZXJ8ZW58MHx8fHwxNzcwMjg0NzQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lazy river"
+    },
+    {
+      "id": "gallery-5",
+      "description": "A beautiful sunset over the waterpark.",
+      "imageUrl": "https://images.unsplash.com/photo-1631670796990-6450f4270a9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3YXRlcnBhcmslMjBzdW5zZXR8ZW58MHx8fHwxNzcwMjg0NzQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "waterpark sunset"
+    },
+    {
+      "id": "candid-1",
+      "description": "A father throwing his son in the air in a pool.",
+      "imageUrl": "https://images.unsplash.com/photo-1492269815085-88eb3ffe14e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxmYXRoZXIlMjBzb258ZW58MHx8fHwxNzcwMjE5NDA1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "father son"
+    },
+    {
+      "id": "candid-2",
+      "description": "A girl splashing water with a big smile.",
+      "imageUrl": "https://images.unsplash.com/photo-1565372083597-395e956cd2af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxnaXJsJTIwc3BsYXNoaW5nfGVufDB8fHx8MTc3MDI4NDc0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "girl splashing"
+    },
+    {
+      "id": "candid-3",
+      "description": "A couple laughing on a tube in the lazy river.",
+      "imageUrl": "https://images.unsplash.com/photo-1466979939565-131c4b39a51b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb3VwbGUlMjBsYXVnaGluZ3xlbnwwfHx8fDE3NzAxOTM1MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "couple laughing"
+    },
+    {
+      "id": "candid-4",
+      "description": "A group of teenagers posing for a photo.",
+      "imageUrl": "https://images.unsplash.com/photo-1510947565940-a38e2443c426?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dGVlbmFnZXJzJTIwZnJpZW5kc3xlbnwwfHx8fDE3NzAyODQ3NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "teenagers friends"
+    },
+    {
+      "id": "candid-5",
+      "description": "A little boy with goggles looking surprised.",
+      "imageUrl": "https://images.unsplash.com/photo-1605553701476-4cce0a5f5dab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxib3klMjBzdXJwcmlzZWR8ZW58MHx8fHwxNzcwMjg0NzQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "boy surprised"
+    },
+    {
+      "id": "candid-6",
+      "description": "A woman relaxing on a sun lounger by the pool.",
+      "imageUrl": "https://images.unsplash.com/photo-1594904338339-5046c17b87f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d29tYW4lMjByZWxheGluZ3xlbnwwfHx8fDE3NzAyNDYxODd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman relaxing"
+    },
+    {
+      "id": "candid-7",
+      "description": "Two kids racing down parallel slides.",
+      "imageUrl": "https://images.unsplash.com/photo-1555349162-f257b84f10de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxraWRzJTIwcmFjaW5nfGVufDB8fHx8MTc3MDI4NDc0NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "kids racing"
+    },
+    {
+      "id": "candid-8",
+      "description": "A family enjoying a meal at the food court.",
+      "imageUrl": "https://images.unsplash.com/photo-1583372907808-417fb7797ca9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmYW1pbHklMjBtZWFsfGVufDB8fHx8MTc3MDI4NDc0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "family meal"
+    }
+  ]
 }
