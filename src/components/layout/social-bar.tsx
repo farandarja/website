@@ -7,7 +7,7 @@ import { buttonVariants } from "@/components/ui/button";
 export function SocialBar() {
   const socialLinks = [
     { name: "Instagram", icon: <Instagram className="h-6 w-6" />, href: "https://instagram.com/sirkuswaterplay" },
-    { name: "TikTok", icon: <TikTokIcon className="h-6 w-6" />, href: "#" },
+    { name: "TikTok", icon: <TikTokIcon className="h-6 w-6" />, href: "https://www.tiktok.com/@sirkuswaterplayjatiasih?_r=1&_t=ZS-93h0vWDXcUk" },
     { name: "WhatsApp", icon: <MessageCircle className="h-6 w-6" />, href: "https://wa.me/08176988578" },
   ];
 
