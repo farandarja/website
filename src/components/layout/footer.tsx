@@ -23,7 +23,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
               <Waves className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold font-headline">Sirkus Splash</span>
+              <span className="text-xl font-bold font-headline">Sirkus Waterplay</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Destinasi wisata air terbaik untuk keseruan tak terlupakan bersama keluarga.
@@ -73,7 +73,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Sirkus Splash. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Sirkus Waterplay. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

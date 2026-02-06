@@ -27,7 +27,7 @@ export function Header() {
         <div className="mr-4 flex">
           <Link href="/" className="flex items-center space-x-2">
             <Waves className="h-6 w-6 text-primary" />
-            <span className="font-bold font-headline">Sirkus Splash</span>
+            <span className="font-bold font-headline">Sirkus Waterplay</span>
           </Link>
         </div>
 
@@ -67,7 +67,7 @@ export function Header() {
                 <div className="flex items-center justify-between border-b pb-4">
                   <Link href="/" className="flex items-center space-x-2" onClick={() => setMenuOpen(false)}>
                     <Waves className="h-6 w-6 text-primary" />
-                    <span className="font-bold font-headline">Sirkus Splash</span>
+                    <span className="font-bold font-headline">Sirkus Waterplay</span>
                   </Link>
                 </div>
                 <nav className="flex flex-col space-y-4 mt-6">

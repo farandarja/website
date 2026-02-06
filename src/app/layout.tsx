@@ -7,7 +7,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { SocialBar } from '@/components/layout/social-bar';
 
 export const metadata: Metadata = {
-  title: 'Sirkus Splash - Serunya Bermain Air Bersama Keluarga!',
+  title: 'Kolam Renang Indoor | Sirkus Waterplay',
   description:
     'Sirkus Waterpark adalah destinasi wisata air terbaik untuk keluarga. Nikmati berbagai wahana seru, fasilitas lengkap, dan promo menarik. Beli tiket online sekarang!',
 };
