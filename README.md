@@ -5,6 +5,7 @@ This is a NextJS starter in Firebase Studio.
 To get started, take a look at src/app/page.tsx.
 
 1) Install dependency
+
 npm install
 
 2) Setup Database MySQL
