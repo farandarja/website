@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, Waves, X } from "lucide-react";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -21,12 +23,20 @@ export function Header() {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
+const logo = PlaceHolderImages.find(img => img.id === "logo");
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex">
-          <Link href="/" className="flex items-center space-x-2">
-            <Waves className="h-6 w-6 text-primary" />
+          <Link href="/" className="flex items-center space-x-2 mb-4">
+              {logo && (
+                <Image
+                src={logo.imageUrl}
+                alt="Sirkus Waterplay Logo"
+                width={40}
+                height={40}
+                className="object-contain"/> )}
             <span className="font-bold font-headline">Sirkus Waterplay</span>
           </Link>
         </div>

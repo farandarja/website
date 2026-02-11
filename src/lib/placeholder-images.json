@@ -51,14 +51,14 @@
     {
       "id": "news-2",
       "description": "A DJ playing music by the pool at a waterpark.",
-      "imageUrl": "https://images.unsplash.com/photo-1562866470-3774249bef10?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb29sJTIwcGFydHl8ZW58MHx8fHwxNzcwMjg0NzQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "pool party"
+      "imageUrl": "/images/news/htmfeb.png",
+      "imageHint": "htm"
     },
     {
       "id": "news-3",
-      "description": "A mother applying sunscreen to her child's back.",
-      "imageUrl": "https://images.unsplash.com/photo-1759341918577-db94fffb7947?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdW5zY3JlZW4lMjBjaGlsZHxlbnwwfHx8fDE3NzAyODQ3NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "sunscreen child"
+      "description": "Puasa",
+      "imageUrl": "/images/news/puasa.png",
+      "imageHint": "puasa"
     },
     {
       "id": "news-4",
@@ -143,6 +143,12 @@
       "description": "A family enjoying a meal at the food court.",
       "imageUrl": "https://images.unsplash.com/photo-1583372907808-417fb7797ca9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmYW1pbHklMjBtZWFsfGVufDB8fHx8MTc3MDI4NDc0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "family meal"
+    },
+    {
+      "id": "logo",
+      "description": "icon sirkus waterplay",
+      "imageUrl": "/images/icon.png",
+      "imageHint": "icon sirkus waterplay"
     }
   ]
 }

@@ -1,6 +1,9 @@
 import Link from "next/link";
-import { Instagram, MessageCircle, Waves } from "lucide-react";
+import { Instagram, MessageCircle } from "lucide-react";
 import { TikTokIcon } from "@/components/icons/tiktok-icon";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+import Image from "next/image";
+
 
 export function Footer() {
   const socialLinks = [
@@ -16,13 +19,21 @@ export function Footer() {
     { href: "/beli-tiket", label: "Tiket" },
   ];
 
+  const logo = PlaceHolderImages.find(img => img.id === "logo");
+
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container py-12 px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <Waves className="h-8 w-8 text-primary" />
+              {logo && (
+                <Image
+                src={logo.imageUrl}
+                alt="Sirkus Waterplay Logo"
+                width={32}
+                height={32}
+                className="object-contain"/> )}
               <span className="text-xl font-bold font-headline">Sirkus Waterplay</span>
             </Link>
             <p className="text-sm text-muted-foreground">
@@ -46,7 +57,7 @@ export function Footer() {
             <div className="text-sm text-muted-foreground space-y-2">
               <p>
                 <strong>Alamat:</strong><br />
-                Jl. Raya Fantasi No. 123, Kota Bahagia, Indonesia
+                Jl. Wibawa Mukti II No.4, RT.001/RW.5, Jatiasih, Kec. Jatiasih, Kota Bks, Jawa Barat 17423
               </p>
               <p>
                 <strong>Jam Buka:</strong><br />

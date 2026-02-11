@@ -15,7 +15,7 @@ export default function BeritaPage() {
             Berita & Informasi
           </h1>
           <p className="max-w-3xl mx-auto text-lg text-muted-foreground">
-            Ikuti terus promo, event, dan pengumuman terbaru dari Sirkus Waterpark.
+            Ikuti terus promo, event, dan pengumuman terbaru dari Sirkus Waterplay.
           </p>
         </div>
 
@@ -61,4 +61,5 @@ export default function BeritaPage() {
       </div>
     </div>
   );
+  
 }
