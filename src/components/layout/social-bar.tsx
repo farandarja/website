@@ -7,7 +7,7 @@ import { buttonVariants } from "@/components/ui/button";
 export function SocialBar() {
   const socialLinks = [
     { name: "Instagram", icon: <Instagram className="h-6 w-6" />, href: "https://instagram.com/sirkuswaterplay" },
-    { name: "TikTok", icon: <TikTokIcon className="h-6 w-6" />, href: "https://www.tiktok.com/@sirkuswaterplayjatiasih?_t=ZS-8tn14zwWzdX&_r=1&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnbcK6GNT19H4GRAPzoUv0HVflWFfiWdplFgADxmc5VsI-9I9MlhMm65EAFwo_aem_3DUi6zHZqtFiDdni0N_-4A" },
+    { name: "TikTok", icon: <TikTokIcon className="h-6 w-6" />, href: "https://www.tiktok.com/@sirkuswaterplayjatiasih?_r=1&_t=ZS-93h0vWDXcUk" },
     { name: "WhatsApp", icon: <MessageCircle className="h-6 w-6" />, href: "https://wa.me/08176988578" },
     { name: "Map", icon: <MapPin className="h-6 w-6" />, href: "https://maps.app.goo.gl/YUb3HGWaUmKqd5x87" },
   ];
