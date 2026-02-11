@@ -47,7 +47,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
           <h1 className="text-4xl md:text-6xl font-headline font-bold drop-shadow-lg mb-4">
-            Serunya Bermain Air Bersama Keluarga di Sirkus Waterpark!
+            Serunya Bermain Air Bersama Keluarga di Sirkus Waterplay!
           </h1>
           <p className="max-w-2xl text-lg md:text-xl mb-8 drop-shadow-md">
             Nikmati hari yang tak terlupakan dengan puluhan wahana air yang
@@ -137,7 +137,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ======= SECTION LOKASI (YANG KAMU MINTA) ======= */}
+      {/* ======= SECTION LOKASI ======= */}
       <section id="lokasi" className="py-16 lg:py-24 bg-secondary">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
