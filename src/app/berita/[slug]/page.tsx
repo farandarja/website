@@ -6,12 +6,23 @@ import { news } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Badge } from "@/components/ui/badge";
 
-export default function BeritaDetailPage({ params }: { params: { slug: string } }) {
-  const item = news.find((n) => n.slug === params.slug);
+export default async function BeritaDetailPage(
+  { params }: { params: Promise<{ slug: string }> }
+) {
+  const { slug } = await params;
+
+  const item = news.find((n) => n.slug === slug);
 
   if (!item) {
     notFound();
   }
+
+  return (
+    <div>
+      {item.title}
+    </div>
+  );
+}
 
   const image = PlaceHolderImages.find((img) => img.id === item.imageId);
 

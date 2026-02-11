@@ -127,6 +127,7 @@ export async function POST(req: Request) {
       conn.release();
     }
   } catch (err: any) {
+    console.error("PURCHASE ERROR:", err);
     return Response.json({ error: "Server error", message: err?.message ?? "unknown" }, { status: 500 });
   }
 }
