@@ -61,7 +61,7 @@ export default async function BeritaDetailPage(
               Jangan lewatkan kesempatan ini untuk menciptakan kenangan indah bersama orang-orang tercinta. Sirkus Waterpark selalu berkomitmen untuk memberikan pengalaman terbaik bagi setiap pengunjung. Kami menantikan kedatangan Anda!
             </p>
              <p>
-              Untuk informasi lebih lanjut mengenai promo, event, atau wahana kami, jangan ragu untuk menghubungi layanan pelanggan kami atau mengikuti akun media sosial kami. Sampai jumpa di Sirkus Waterpark, tempat serunya bermain air bersama keluarga!
+              Untuk informasi lebih lanjut mengenai promo, event, atau wahana kami, jangan ragu untuk menghubungi layanan pelanggan kami atau mengikuti akun media sosial kami. Sampai jumpa di Sirkus Waterplay, tempat serunya bermain air bersama keluarga!
             </p>
           </div>
         </article>

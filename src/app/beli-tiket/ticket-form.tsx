@@ -26,7 +26,7 @@ import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
-  ticketType: z.enum(["anak", "dewasa", "keluarga"], {
+  ticketType: z.enum(["HTM Weekdays", "HTM Weekends", "HTM Jumat Berkah", "HTM Libur Sekolah", "HTM Libur Nasional"], {
     required_error: "Anda harus memilih tipe tiket.",
   }),
   visitDate: z.date({
@@ -110,23 +110,37 @@ export function TicketForm() {
                 >
                   <FormItem className="flex items-center space-x-3 space-y-0">
                     <FormControl>
-                      <RadioGroupItem value="anak" />
+                      <RadioGroupItem value="HTM Weekdays" />
                     </FormControl>
-                    <FormLabel className="font-normal">Anak (Rp 50.000)</FormLabel>
+                    <FormLabel className="font-normal">HTM Weekdays (Rp 30.000)</FormLabel>
                   </FormItem>
 
                   <FormItem className="flex items-center space-x-3 space-y-0">
                     <FormControl>
                       <RadioGroupItem value="dewasa" />
                     </FormControl>
-                    <FormLabel className="font-normal">Dewasa (Rp 75.000)</FormLabel>
+                    <FormLabel className="font-normal">HTM Weekends (Rp 40.000)</FormLabel>
                   </FormItem>
 
                   <FormItem className="flex items-center space-x-3 space-y-0">
                     <FormControl>
                       <RadioGroupItem value="keluarga" />
                     </FormControl>
-                    <FormLabel className="font-normal">Paket Keluarga (Rp 220.000)</FormLabel>
+                    <FormLabel className="font-normal">HTM Jumat Berkah (Rp 20.000)</FormLabel>
+                  </FormItem>
+
+                  <FormItem className="flex items-center space-x-3 space-y-0">
+                    <FormControl>
+                      <RadioGroupItem value="keluarga" />
+                    </FormControl>
+                    <FormLabel className="font-normal">HTM Liburan Sekolah (Rp 40.000)</FormLabel>
+                  </FormItem>
+
+                  <FormItem className="flex items-center space-x-3 space-y-0">
+                    <FormControl>
+                      <RadioGroupItem value="keluarga" />
+                    </FormControl>
+                    <FormLabel className="font-normal">HTM Liburan Nasional (Rp 40.000)</FormLabel>
                   </FormItem>
                 </RadioGroup>
               </FormControl>
