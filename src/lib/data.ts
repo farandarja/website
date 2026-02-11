@@ -83,7 +83,7 @@ export const news = [
   {
     id: '2',
     title: 'HTM Sirkus Waterplay Bulan Februari 2026',
-    slug: 'HTM Februari',
+    slug: 'htm-februari',
     category: 'Info',
     date: '2026-02',
     content: 'Nikmati momen liburan yang lebih seru dan menyenangkan bersama Sirkus Waterplay di bulan Februari dengan promo harga tiket masuk spesial untuk seluruh pengunjung. Selama periode ini, Anda dan keluarga dapat menikmati berbagai wahana air, kolam renang, serta fasilitas hiburan lainnya dengan harga yang lebih terjangkau tanpa mengurangi kualitas pengalaman bermain. Promo HTM Februari ini menjadi kesempatan terbaik untuk menghabiskan waktu bersama orang-orang terdekat, baik untuk rekreasi keluarga, hangout bersama teman, maupun sekadar melepas penat dari rutinitas harian.',

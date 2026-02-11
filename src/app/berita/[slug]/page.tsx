@@ -16,13 +16,7 @@ export default async function BeritaDetailPage(
   if (!item) {
     notFound();
   }
-
-  return (
-    <div>
-      {item.title}
-    </div>
-  );
-}
+  
 
   const image = PlaceHolderImages.find((img) => img.id === item.imageId);
 
