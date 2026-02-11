@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowRight,
   Car,
@@ -8,29 +8,31 @@ import {
   ShowerHead,
   Tent,
   UtensilsCrossed,
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { attractions, news } from '@/lib/data';
+  MapPin,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { attractions, news } from "@/lib/data";
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-1');
+  const heroImage = PlaceHolderImages.find((img) => img.id === "hero-1");
   const featuredAttractions = attractions.slice(0, 3);
   const latestNews = news.slice(0, 2);
 
   const facilities = [
-    { name: 'Gazebo', icon: <Tent className="h-8 w-8" /> },
-    { name: 'Kamar Bilas', icon: <ShowerHead className="h-8 w-8" /> },
-    { name: 'Loker', icon: <Lock className="h-8 w-8" /> },
-    { name: 'Food Court', icon: <UtensilsCrossed className="h-8 w-8" /> },
-    { name: 'Area Parkir', icon: <Car className="h-8 w-8" /> },
-    { name: 'Mushola', icon: <MoonStar className="h-8 w-8" /> },
+    { name: "Area Bermain Anak", icon: <Tent className="h-8 w-8" /> },
+    { name: "Kamar Bilas", icon: <ShowerHead className="h-8 w-8" /> },
+    { name: "Loker", icon: <Lock className="h-8 w-8" /> },
+    { name: "Food Court", icon: <UtensilsCrossed className="h-8 w-8" /> },
+    { name: "Area Parkir", icon: <Car className="h-8 w-8" /> },
+    { name: "Mushola", icon: <MoonStar className="h-8 w-8" /> },
   ];
 
   return (
     <div className="flex flex-col">
+      {/* HERO */}
       <section className="relative h-[60vh] md:h-[80vh] w-full">
         {heroImage && (
           <Image
@@ -51,12 +53,17 @@ export default function Home() {
             Nikmati hari yang tak terlupakan dengan puluhan wahana air yang
             menantang dan fasilitas lengkap untuk kenyamanan Anda.
           </p>
-          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg">
+          <Button
+            asChild
+            size="lg"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg"
+          >
             <Link href="/beli-tiket">Beli Tiket Sekarang</Link>
           </Button>
         </div>
       </section>
 
+      {/* WAHANA */}
       <section id="wahana" className="py-16 lg:py-24 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
@@ -75,7 +82,7 @@ export default function Home() {
                   <CardHeader className="p-0">
                     {image && (
                       <div className="aspect-w-16 aspect-h-9">
-                         <Image
+                        <Image
                           src={image.imageUrl}
                           alt={attraction.name}
                           width={600}
@@ -108,6 +115,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FASILITAS */}
       <section id="fasilitas" className="py-16 lg:py-24 bg-secondary">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
@@ -129,6 +137,38 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ======= SECTION LOKASI (YANG KAMU MINTA) ======= */}
+      <section id="lokasi" className="py-16 lg:py-24 bg-secondary">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
+            Lokasi Kami
+          </h2>
+
+          <div className="mt-8 rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              title="Lokasi Sirkus Waterplay"
+              src="https://www.google.com/maps?q=Sirkus+Waterplay+Jatiasih+Bekasi&output=embed"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+            ></iframe>
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Sirkus+Waterplay+Jatiasih+Bekasi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-primary text-primary-foreground text-center py-3 font-semibold hover:underline cursor-pointer"
+            >
+              🎪 Klik di sini untuk melihat lokasi Sirkus Waterplay 🎪
+            </a>
+          </div>
+        </div>
+      </section>
+      {/* BERITA */}
       <section id="berita" className="py-16 lg:py-24 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
@@ -146,7 +186,7 @@ export default function Home() {
                 >
                   {image && (
                     <div className="md:w-1/3">
-                       <Image
+                      <Image
                         src={image.imageUrl}
                         alt={item.title}
                         width={400}
@@ -165,16 +205,16 @@ export default function Home() {
                         {item.title}
                       </h3>
                       <p className="text-muted-foreground text-sm mb-4">
-                        {new Date(item.date).toLocaleDateString('id-ID', {
-                          day: 'numeric',
-                          month: 'long',
-                          year: 'numeric',
+                        {new Date(item.date).toLocaleDateString("id-ID", {
+                          day: "numeric",
+                          month: "long",
+                          year: "numeric",
                         })}
                       </p>
                     </div>
                     <Button asChild variant="link" className="p-0 self-start">
                       <Link href={`/berita/${item.slug}`}>
-                        Baca Selengkapnya{' '}
+                        Baca Selengkapnya{" "}
                         <ArrowRight className="ml-1 h-4 w-4" />
                       </Link>
                     </Button>
