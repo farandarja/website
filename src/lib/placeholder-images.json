@@ -1,11 +1,41 @@
 {
   "placeholderImages": [
     {
-      "id": "hero-1",
-      "description": "A vibrant waterpark with slides and happy families.",
-      "imageUrl": "https://images.unsplash.com/photo-1723524993962-0234edebe0cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3YXRlcnBhcmslMjBmdW58ZW58MHx8fHwxNzcwMjg0NzQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "waterpark fun"
-    },
+  "id": "hero-1",
+  "description": "Hero image 1",
+  "imageUrl": "/images/hero/hero1.png",
+  "imageHint": "waterpark"
+},
+{
+  "id": "hero-2",
+  "description": "Hero image 2",
+  "imageUrl": "/images/hero/hero2.png",
+  "imageHint": "water slide"
+},
+{
+  "id": "hero-3",
+  "description": "Hero image 3",
+  "imageUrl": "/images/hero/hero3.png",
+  "imageHint": "family waterpark"
+},
+{
+  "id": "hero-4",
+  "description": "Hero image 4",
+  "imageUrl": "/images/hero/hero4.png",
+  "imageHint": "pool"
+},
+{
+  "id": "hero-5",
+  "description": "Hero image 5",
+  "imageUrl": "/images/hero/hero5.png",
+  "imageHint": "kids pool"
+},
+{
+  "id": "hero-6",
+  "description": "Hero image 6",
+  "imageUrl": "/images/hero/hero6.png",
+  "imageHint": "waterpark fun"
+},
     {
       "id": "attraction-1",
       "description": "A long and winding spiral water slide.",

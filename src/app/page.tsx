@@ -1,5 +1,11 @@
+'use client';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import 'swiper/css';
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from 'react';
 import {
   ArrowRight,
   Car,
@@ -10,6 +16,17 @@ import {
   UtensilsCrossed,
   MapPin,
 } from "lucide-react";
+import { Poppins, Quicksand } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+});
+
+const quicksand = Quicksand({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+}); 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -17,7 +34,28 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { attractions, news } from "@/lib/data";
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find((img) => img.id === "hero-1");
+  const heroImages = PlaceHolderImages.filter(img =>
+  img.id.startsWith('hero'));
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentIndex((prev) => (prev + 1) % heroImages.length);
+  }, 7000); 
+
+  return () => clearInterval(interval);
+}, [heroImages.length]);
+
+const heroImage = heroImages[currentIndex];
+const nextSlide = () => {
+  setCurrentIndex((prev) => (prev + 1) % heroImages.length);
+};
+
+const prevSlide = () => {
+  setCurrentIndex((prev) =>
+    prev === 0 ? heroImages.length - 1 : prev - 1
+  );
+};
   const featuredAttractions = attractions.slice(0, 3);
   const latestNews = news.slice(0, 2);
 
@@ -29,39 +67,142 @@ export default function Home() {
     { name: "Area Parkir", icon: <Car className="h-8 w-8" /> },
     { name: "Mushola", icon: <MoonStar className="h-8 w-8" /> },
   ];
+  
+  const style = `
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes waterJiggle {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-5px); }
+  50% { transform: translateY(0); }
+  75% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes waterSoft {
+  0% { transform: translateY(0px); opacity: 0.9; }
+  50% { transform: translateY(-4px); opacity: 1; }
+  100% { transform: translateY(0px); opacity: 0.9; }
+}
+
+.animate-waterSoft {
+  animation: waterSoft 5s ease-in-out infinite;
+}
+
+
+.animate-gradientMove {
+  animation: gradientMove 8s ease infinite;
+}
+
+@keyframes letterWave {
+  0%   { color: #fa4c4c; }   /* coral */
+  20%  { color: #f5cd2e; }   /* warm yellow */
+  40%  { color: #f880e8; }   /* soft pink */
+  60%  { color: #5b48ee; }   /* soft purple */
+  80%  { color: #07f1f1; }   /* turquoise */
+  100% { color: #ff6b6b; }
+}
+
+.letter-animate span {
+  display: inline-block;
+  animation: letterWave 5s ease-in-out infinite;
+}
+
+
+.animate-colorShift {
+  animation: colorShift 6s ease-in-out infinite;
+}
+`;
 
   return (
     <div className="flex flex-col">
-      {/* HERO */}
-      <section className="relative h-[60vh] md:h-[80vh] w-full">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-cover"
-            priority
-            data-ai-hint={heroImage.imageHint}
-          />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
-          <h1 className="text-4xl md:text-6xl font-headline font-bold drop-shadow-lg mb-4">
-            Serunya Bermain Air Bersama Keluarga di Sirkus Waterplay!
-          </h1>
-          <p className="max-w-2xl text-lg md:text-xl mb-8 drop-shadow-md">
-            Nikmati hari yang tak terlupakan dengan puluhan wahana air yang
-            menantang dan fasilitas lengkap untuk kenyamanan Anda.
-          </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg"
-          >
-            <Link href="/beli-tiket">Beli Tiket Sekarang</Link>
-          </Button>
-        </div>
-      </section>
+      <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden">
+  {heroImage && (
+    <Image
+      src={heroImage.imageUrl}
+      alt={heroImage.description}
+      fill
+      className="object-cover"
+      priority
+    />
+  )}
+
+  <button
+  onClick={prevSlide}
+  className="absolute left-6 top-1/2 -translate-y-1/2 
+  bg-yellow-400
+  text-gray-900
+  w-16 h-16 rounded-full
+  flex items-center justify-center
+  transition-all duration-300
+  hover:scale-110 active:scale-95
+  animate-waterFloat"
+  style={{
+    boxShadow: "0 0 15px rgba(255, 221, 0, 0.7), 0 0 35px rgba(255, 221, 0, 0.5)"
+  }}
+>
+  <ChevronLeft className="w-8 h-8 stroke-[3]" />
+</button>
+
+<button
+  onClick={nextSlide}
+  className="absolute right-6 top-1/2 -translate-y-1/2 
+  bg-yellow-400
+  text-gray-900
+  w-16 h-16 rounded-full
+  flex items-center justify-center
+  transition-all duration-300
+  hover:scale-110 active:scale-95
+  animate-waterFloat"
+  style={{
+    boxShadow: "0 0 15px rgba(255, 221, 0, 0.7), 0 0 35px rgba(255, 221, 0, 0.5)"
+  }}
+>
+  <ChevronRight className="w-8 h-8 stroke-[3]" />
+</button>
+
+</section>
+
+<section className="relative py-28 text-center overflow-hidden 
+bg-gradient-to-br from-[#ffe9a8] via-[#7dd3fc] via-[#c4b5fd] to-[#86efac]">
+
+
+  <div className="container mx-auto px-4 max-w-4xl">
+
+    <h2
+  className={`
+    ${poppins.className}
+    text-4xl md:text-6xl font-extrabold mb-6
+    letter-animate
+  `}
+>
+  {"SIRKUS WATERPLAY".split("").map((char, index) => (
+  <span
+    key={index}
+    style={{ animationDelay: `${index * 0.08}s` }}
+  >
+    {char === " " ? "\u00A0" : char}
+  </span>
+))}
+</h2>
+
+    <p
+      className={`
+        ${quicksand.className}
+        text-lg md:text-xl leading-relaxed tracking-wide
+        animate-colorShift
+        font-medium
+      `}
+    >
+      Indoor waterpark pertama di Indonesia dibangun tahun 2013 adalah tempat rekreasi yang sangat cocok untuk anak-anak. Didesain dengan konsep ala pertunjukan sirkus, Waterboom ini juga melindungi anak-anak dari kepanasan dan kehujanan, ada kolam air panas, lantai dari rubber yang safety dan nyaman. Ada fasilitas sauna dan Mom n Baby Spa membuat Sirkus Waterplay menjadi tempat favorite bagi keluarga
+    </p>
+
+  </div>
+</section>
 
       {/* WAHANA */}
       <section id="wahana" className="py-16 lg:py-24 bg-background">
