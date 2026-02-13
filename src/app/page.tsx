@@ -226,11 +226,18 @@ bg-gradient-to-br from-[#ffe9a8] via-[#7dd3fc] via-[#c4b5fd] to-[#86efac]">
               </div>
             ))}
           </div>
+          <div className="text-center mt-12">
+            <Button asChild variant="outline">
+              <Link href="/fasilitas">
+                Selengkapnya <ArrowRight className="ml-2" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
 
       {/* ======= SECTION LOKASI ======= */}
-      <section id="lokasi" className="py-16 lg:py-24 bg-secondary">
+      <section id="lokasi" className="py-16 lg:py-24 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
             Lokasi Kami
@@ -260,8 +267,9 @@ bg-gradient-to-br from-[#ffe9a8] via-[#7dd3fc] via-[#c4b5fd] to-[#86efac]">
           </div>
         </div>
       </section>
+            
       {/* BERITA */}
-      <section id="berita" className="py-16 lg:py-24 bg-background">
+      <section id="berita" className="py-16 lg:py-24 bg-secondary">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
             Berita & Info Terbaru

@@ -22,7 +22,7 @@ export function Footer() {
   const logo = PlaceHolderImages.find(img => img.id === "logo");
 
   return (
-    <footer className="bg-secondary text-secondary-foreground">
+    <footer className="bg-background text-secondary-foreground">
       <div className="container py-12 px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
