@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -29,6 +29,12 @@ export default function FasilitasPage() {
     { id: "gallery-4", imageUrl: "/images/galeri/kolam4.png" },
   ];
 
+  type Facilities = {
+  name: string;
+  icon: ReactNode;
+  images: string[];
+};
+
   const facilities = [
     {
       name: "Area Bermain Anak",
@@ -36,14 +42,14 @@ export default function FasilitasPage() {
       images: [
         "/images/fasilitas/bermain-anak/1.png",
         "/images/fasilitas/bermain-anak/2.png",
+        "/images/fasilitas/bermain-anak/3.png"
       ],
     },
     {
       name: "Kamar Bilas",
       icon: <ShowerHead className="h-10 w-10" />,
       images: [
-        "/images/fasilitas/kamar-bilas/1.png",
-        "/images/fasilitas/kamar-bilas/2.png",
+        "/images/fasilitas/kamar-bilas/1.png", 
       ],
     },
     {
@@ -80,7 +86,13 @@ export default function FasilitasPage() {
     },
   ];
 
-  const [selectedFacility, setSelectedFacility] = useState(null);
+  type Facility = {
+  name: string;
+  icon: ReactNode;
+  images: string[];
+};
+
+  const [selectedFacility, setSelectedFacility] = useState<Facility | null>(null);
 
   return (
     <div className="bg-background">
