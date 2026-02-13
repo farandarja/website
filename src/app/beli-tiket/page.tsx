@@ -19,18 +19,15 @@ export default function BeliTiketPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="font-medium">Anak (di bawah 12 tahun)</span>
-                  <span className="font-bold text-primary">Rp 50.000</span>
+                  <span className="font-medium">Weekdays (Senin-Kamis)</span>
+                  <span className="font-bold text-primary">Rp 30.000</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="font-medium">Dewasa</span>
-                  <span className="font-bold text-primary">Rp 75.000</span>
-                </div>
-                 <div className="flex justify-between items-center">
-                  <span className="font-medium">Paket Keluarga (2 Dewasa, 2 Anak)</span>
-                  <span className="font-bold text-primary">Rp 220.000</span>
-                </div>
-                 <p className="text-xs text-muted-foreground pt-4">*Harga berlaku untuk kunjungan hari biasa maupun akhir pekan/libur nasional.</p>
+                  <span className="font-medium">Weekends (Jumat-Minggu)</span>
+                  <span className="font-bold text-primary">Rp 40.000</span>
+                </div> 
+                 <p className="text-xs text-muted-foreground pt-4">*Harga tiket weekends berlaku untuk kunjungan hari libur sekolah/libur nasional.
+                 <br />*Harga tiket berlaku untuk semua umur.</p>
               </CardContent>
             </Card>
           </div>

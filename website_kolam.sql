@@ -88,6 +88,6 @@ CREATE TABLE payments (
 
 INSERT INTO ticket_types (code, name, price, description)
 VALUES
-  ('anak', 'Anak (di bawah 12 tahun)', 50000, 'Tiket anak'),
-  ('dewasa', 'Dewasa', 75000, 'Tiket dewasa'),
+  ('Weekdays', '(Senin-Kamis)', 30000, 'Tiket weekdays'),
+  ('Weekends', '(Jumat-Minggu)', 40000, 'Tiket weekends'),
   ('keluarga', 'Paket Keluarga (2 Dewasa, 2 Anak)', 220000, 'Paket keluarga');

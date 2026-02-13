@@ -4,7 +4,7 @@ import pool from "@/lib/db";
 import { snap } from "@/lib/midtrans";
 
 const PurchaseSchema = z.object({
-  ticketType: z.enum(["anak", "dewasa", "keluarga"]),
+  ticketType: z.enum(["Weekdays", "Weekends"]),
   visitDate: z.string().min(1),
   name: z.string().min(2),
   email: z.string().email(),
