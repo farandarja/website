@@ -86,3 +86,17 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes letterWave {
+  0%   { color: #fa4c4c; }
+  20%  { color: #f5cd2e; }
+  40%  { color: #f880e8; }
+  60%  { color: #5b48ee; }
+  80%  { color: #07f1f1; }
+  100% { color: #ff6b6b; }
+}
+
+.letter-animate span {
+  display: inline-block;
+  animation: letterWave 5s ease-in-out infinite;
+}

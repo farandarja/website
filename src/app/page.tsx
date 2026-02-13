@@ -67,59 +67,10 @@ const prevSlide = () => {
     { name: "Area Parkir", icon: <Car className="h-8 w-8" /> },
     { name: "Mushola", icon: <MoonStar className="h-8 w-8" /> },
   ];
-  
-  const style = `
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes waterJiggle {
-  0% { transform: translateY(0); }
-  25% { transform: translateY(-5px); }
-  50% { transform: translateY(0); }
-  75% { transform: translateY(-3px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes waterSoft {
-  0% { transform: translateY(0px); opacity: 0.9; }
-  50% { transform: translateY(-4px); opacity: 1; }
-  100% { transform: translateY(0px); opacity: 0.9; }
-}
-
-.animate-waterSoft {
-  animation: waterSoft 5s ease-in-out infinite;
-}
-
-
-.animate-gradientMove {
-  animation: gradientMove 8s ease infinite;
-}
-
-@keyframes letterWave {
-  0%   { color: #fa4c4c; }   /* coral */
-  20%  { color: #f5cd2e; }   /* warm yellow */
-  40%  { color: #f880e8; }   /* soft pink */
-  60%  { color: #5b48ee; }   /* soft purple */
-  80%  { color: #07f1f1; }   /* turquoise */
-  100% { color: #ff6b6b; }
-}
-
-.letter-animate span {
-  display: inline-block;
-  animation: letterWave 5s ease-in-out infinite;
-}
-
-
-.animate-colorShift {
-  animation: colorShift 6s ease-in-out infinite;
-}
-`;
 
   return (
-    <div className="flex flex-col">
+  <div className="flex flex-col">
+    {/* <style jsx global>{style}</style> */}
       <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden">
   {heroImage && (
     <Image
