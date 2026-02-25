@@ -3,6 +3,7 @@ import QRCode from "qrcode";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { SimulatePaidButton } from "./simulate-paid-button";
 
 export const dynamic = "force-dynamic";
 
@@ -149,6 +150,7 @@ export default async function KonfirmasiPage({
                 <Button>Bayar Sekarang</Button>
               </a>
             )}
+            {!isPaid && <SimulatePaidButton orderCode={order.order_code} />}
             <Button disabled>Unduh E-Ticket (opsional)</Button>
           </CardFooter>
         </Card>

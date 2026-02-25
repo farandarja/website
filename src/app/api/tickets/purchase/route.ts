@@ -24,15 +24,55 @@ function toDateOnlyString(iso: string) {
   return `${yyyy}-${mm}-${dd}`;
 }
 
+const TICKET_DEFS = {
+  Weekdays: {
+    name: "Weekdays (Senin-Kamis)",
+    price: 30000,
+    description: "Tiket masuk weekdays (Senin–Kamis) untuk semua umur.",
+  },
+  Weekends: {
+    name: "Weekends (Jumat-Minggu)",
+    price: 40000,
+    description:
+      "Tiket masuk weekends (Jumat–Minggu, termasuk libur sekolah/nasional) untuk semua umur.",
+  },
+} as const;
+
+async function ensureTicketTypesSynced() {
+  const defs = Object.entries(TICKET_DEFS).map(([code, d]) => [
+    code,
+    d.name,
+    d.price,
+    d.description,
+  ]);
+
+  const placeholders = defs.map(() => "(?, ?, ?, ?)").join(", ");
+  await pool.execute(
+    `INSERT INTO ticket_types (code, name, price, description)
+     VALUES ${placeholders}
+     ON DUPLICATE KEY UPDATE
+       name = VALUES(name),
+       price = VALUES(price),
+       description = VALUES(description)`,
+    defs.flat()
+  );
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
     const parsed = PurchaseSchema.safeParse(body);
     if (!parsed.success) {
-      return Response.json({ error: "Validasi gagal", details: parsed.error.flatten() }, { status: 400 });
+      return Response.json(
+        { error: "Validasi gagal", details: parsed.error.flatten() },
+        { status: 400 }
+      );
     }
 
     const { ticketType, visitDate, name, email, phone } = parsed.data;
+
+    // pastikan master ticket_types di DB selaras dengan UI (beli-tiket)
+    await ensureTicketTypesSynced();
 
     // ambil harga ticket dari DB
     const [rows] = await pool.query(
@@ -40,14 +80,20 @@ export async function POST(req: Request) {
       [ticketType]
     );
     const ticket = Array.isArray(rows) ? (rows[0] as any) : null;
-    if (!ticket) return Response.json({ error: "Jenis tiket tidak ditemukan" }, { status: 404 });
+    if (!ticket)
+      return Response.json(
+        { error: "Jenis tiket tidak ditemukan" },
+        { status: 404 }
+      );
 
     const orderCode = makeOrderCode();
     const visitDateOnly = toDateOnlyString(visitDate);
     const totalAmount = Number(ticket.price);
 
     const appBaseUrl = process.env.APP_BASE_URL || "http://localhost:9002";
-    const finishUrl = `${appBaseUrl}/beli-tiket/konfirmasi?order=${encodeURIComponent(orderCode)}`;
+    const finishUrl = `${appBaseUrl}/beli-tiket/konfirmasi?order=${encodeURIComponent(
+      orderCode
+    )}`;
 
     const conn = await pool.getConnection();
     try {
@@ -128,6 +174,9 @@ export async function POST(req: Request) {
     }
   } catch (err: any) {
     console.error("PURCHASE ERROR:", err);
-    return Response.json({ error: "Server error", message: err?.message ?? "unknown" }, { status: 500 });
+    return Response.json(
+      { error: "Server error", message: err?.message ?? "unknown" },
+      { status: 500 }
+    );
   }
 }
