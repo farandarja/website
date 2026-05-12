@@ -3,37 +3,37 @@
     {
   "id": "hero-1",
   "description": "Hero image 1",
-  "imageUrl": "/images/hero/hero1.png",
+  "imageUrl": "/images/hero/hero1.jpeg",
   "imageHint": "waterpark"
 },
 {
   "id": "hero-2",
   "description": "Hero image 2",
-  "imageUrl": "/images/hero/hero2.png",
+  "imageUrl": "/images/hero/hero2.jpg",
   "imageHint": "water slide"
 },
 {
   "id": "hero-3",
   "description": "Hero image 3",
-  "imageUrl": "/images/hero/hero3.png",
+  "imageUrl": "/images/hero/hero3.jpg",
   "imageHint": "family waterpark"
 },
 {
   "id": "hero-4",
   "description": "Hero image 4",
-  "imageUrl": "/images/hero/hero4.png",
+  "imageUrl": "/images/hero/hero4.jpeg",
   "imageHint": "pool"
 },
 {
   "id": "hero-5",
   "description": "Hero image 5",
-  "imageUrl": "/images/hero/hero5.png",
+  "imageUrl": "/images/hero/hero5.jpeg",
   "imageHint": "kids pool"
 },
 {
   "id": "hero-6",
   "description": "Hero image 6",
-  "imageUrl": "/images/hero/hero6.png",
+  "imageUrl": "/images/hero/hero6.jpeg",
   "imageHint": "waterpark fun"
 },
     {
