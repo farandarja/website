@@ -1,6 +1,7 @@
 import { createHash } from "crypto";
 import pool from "@/lib/db";
 import { coreApi, serverKey } from "@/lib/midtrans";
+import { sendTicketEmailIfNeeded } from "@/lib/ticket-email";
 
 // Midtrans akan POST JSON ke endpoint ini
 export async function POST(req: Request) {
@@ -23,7 +24,7 @@ export async function POST(req: Request) {
     }
 
     // 1) Verify signature_key (wajib)
-    // rumus resmi: SHA512(order_id+status_code+gross_amount+ServerKey) :contentReference[oaicite:1]{index=1}
+    // rumus resmi: SHA512(order_id+status_code+gross_amount+ServerKey)
     const raw = `${order_id}${status_code}${gross_amount}${serverKey}`;
     const expected = createHash("sha512").update(raw).digest("hex");
 
@@ -34,9 +35,8 @@ export async function POST(req: Request) {
     // 2) (Best practice) cek status ke Midtrans API biar lebih valid
     const status = await coreApi.transaction.status(order_id);
 
-    // Mapping status Midtrans -> status order kita
     const trxStatus = status.transaction_status; // settlement/capture/pending/deny/expire/cancel
-    const fraud = status.fraud_status; // accept/challenge/deny (untuk kartu)
+    const fraud = status.fraud_status; // accept/challenge/deny
     const midtransPaymentType = status.payment_type;
 
     let newOrderStatus: "PENDING" | "PAID" | "CANCELLED" | "EXPIRED" = "PENDING";
@@ -64,26 +64,41 @@ export async function POST(req: Request) {
     try {
       await conn.beginTransaction();
 
-      // update orders
-      await conn.execute(
-        `UPDATE orders SET status = ? WHERE order_code = ?`,
-        [newOrderStatus, order_id]
+      
+      // Ambil status sebelumnya (buat mencegah email terkirim berkali-kali)
+      const [prevRows] = await conn.query(
+        `SELECT status FROM orders WHERE order_code = ? LIMIT 1`,
+        [order_id]
       );
+      const prev = Array.isArray(prevRows) ? (prevRows[0] as any) : null;
+      const prevStatus: string | null = prev?.status ?? null;
 
-      // update payments (ambil payment row terakhir utk order ini)
+// update orders
+      await conn.execute(`UPDATE orders SET status = ? WHERE order_code = ?`, [
+        newOrderStatus,
+        order_id,
+      ]);
+
+      // update payments (ambil payment terbaru utk order ini) - versi aman tanpa JOIN+ORDER BY+LIMIT
       await conn.execute(
         `
-        UPDATE payments p
-        JOIN orders o ON o.id = p.order_id
-        SET p.status = ?,
-            p.paid_at = IF(? = 'PAID', NOW(), p.paid_at),
-            p.midtrans_transaction_id = ?,
-            p.midtrans_status = ?,
-            p.method = 'MIDTRANS_SNAP',
-            p.provider_ref = ?
-        WHERE o.order_code = ?
-        ORDER BY p.id DESC
-        LIMIT 1
+        UPDATE payments
+        SET status = ?,
+            paid_at = IF(? = 'PAID', NOW(), paid_at),
+            midtrans_transaction_id = ?,
+            midtrans_status = ?,
+            method = 'MIDTRANS_SNAP',
+            provider_ref = ?
+        WHERE id = (
+          SELECT id FROM (
+            SELECT p.id
+            FROM payments p
+            JOIN orders o ON o.id = p.order_id
+            WHERE o.order_code = ?
+            ORDER BY p.id DESC
+            LIMIT 1
+          ) t
+        )
         `,
         [
           newPaymentStatus,
@@ -96,16 +111,28 @@ export async function POST(req: Request) {
       );
 
       await conn.commit();
-    } catch (e) {
+    
+
+      // Kirim email hanya saat transisi ke PAID (jangan bikin Midtrans retry kalau email gagal)
+      if (newOrderStatus === "PAID" && prevStatus !== "PAID" && prevStatus !== "USED") {
+        try {
+          await sendTicketEmailIfNeeded(order_id);
+        } catch (e) {
+          console.error("EMAIL SEND ERROR:", e);
+        }
+      }
+} catch (e) {
       await conn.rollback();
       throw e;
     } finally {
       conn.release();
     }
 
-    // Midtrans butuh response 200 supaya tidak retry terus
     return Response.json({ ok: true });
   } catch (err: any) {
-    return Response.json({ error: "Server error", message: err?.message ?? "unknown" }, { status: 500 });
+    return Response.json(
+      { error: "Server error", message: err?.message ?? "unknown" },
+      { status: 500 }
+    );
   }
 }
